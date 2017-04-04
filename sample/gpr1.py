@@ -3,7 +3,9 @@
 #  sudo apt-get remove python-sklearn python-sklearn-lib
 #  sudo pip install -U scikit-learn
 
-# Loading libraries
+# Importing libraries...
+import sys
+sys.path.append('../sample')
 from libplot import PlotF
 import random, math
 import numpy as np

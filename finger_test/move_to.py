@@ -1,11 +1,13 @@
 #!/usr/bin/python
 #Move Dynamixel to the initial position, and to a target
 
+# Importing libraries...
 import sys
 sys.path.append('../finger')
 from dynamixel_lib import *
 import time
 
+#Setup the device
 dxl= TDynamixel1()
 dxl.Setup()
 

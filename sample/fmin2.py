@@ -1,10 +1,13 @@
 #!/usr/bin/python
+
+# Importing libraries...
 import math
 import numpy as np
 from scipy.optimize import minimize
 import matplotlib.pyplot as plot
 from mpl_toolkits.mplot3d import Axes3D
 
+# Objective function to be minimized
 def f(x):
   #return (x[0]-2.0)**2 + (x[1]-3.0)**2
   return math.sin(0.5*x[0]**2-0.25*x[1]*x[1]) * math.cos(2.0*x[0]+1.0-math.exp(x[1]))

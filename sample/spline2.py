@@ -1,4 +1,8 @@
 #!/usr/bin/python
+
+# Importing libraries...
+import sys
+sys.path.append('../sample')
 from libspline import *
 from libplot import PlotF
 import numpy as np

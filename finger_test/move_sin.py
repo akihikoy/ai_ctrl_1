@@ -1,6 +1,7 @@
 #!/usr/bin/python
 #Control Dynamixel to follow a sin curve
 
+#Importing libraries...
 import sys
 sys.path.append('../finger')
 from dynamixel_lib import *
@@ -8,6 +9,7 @@ import time
 import math
 import numpy as np
 
+#Setup the device
 dxl= TDynamixel1()
 dxl.Setup()
 

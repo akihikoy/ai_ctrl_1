@@ -1,10 +1,14 @@
 #!/usr/bin/python
+
+# Importing libraries...
+import sys
+sys.path.append('../sample')
 from libspline import *
 from libplot import PlotF
 import numpy as np
 import random
 
-# Define key points = pairs of [x,y].
+# Define key points (pairs of [x,y]).
 key_points= [
   [0.0, 0.0],
   [1.0, 2.0],
