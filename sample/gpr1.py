@@ -40,8 +40,12 @@ print 'f(1.5)=',f(1.5)
 print 'f(3.45)=',f(3.45)
 print 'f(5.0)=',f(5.0)
 
-# Plot y=f(x):
-plot= PlotF(f, xmin=-1.0, xmax=5.0, show=False)
-plot.plot(data_x, data_y, 'o')
-plot.show()
+# Generate data for plotting (copy and paste to Excel or Google Spreadsheet)
+for t in np.mgrid[-1.0:5.0:0.2]:
+  print t,f(t)
+
+# Plot y=f(x) with GUI (uncomment):
+#plot= PlotF(f, xmin=-1.0, xmax=5.0, show=False)
+#plot.plot(data_x, data_y, 'o')
+#plot.show()
 

@@ -17,7 +17,11 @@ f= spline.Evaluate
 
 # Now we can compute y=f(x) for any x
 
-# Plot y=f(x):
-plot= PlotF(f, xmin=key_points[0][0], xmax=key_points[-1][0], show=False)
-plot.plot([p[0] for p in key_points], [p[1] for p in key_points], 'o')
-plot.show()
+# Generate data for plotting (copy and paste to Excel or Google Spreadsheet)
+for t in np.mgrid[key_points[0][0]:key_points[-1][0]:0.1]:
+  print t,f(t)
+
+# Plot y=f(x) with GUI (uncomment):
+#plot= PlotF(f, xmin=key_points[0][0], xmax=key_points[-1][0], show=False)
+#plot.plot([p[0] for p in key_points], [p[1] for p in key_points], 'o')
+#plot.show()

@@ -23,7 +23,11 @@ print 'f(1.5)=',f(1.5)
 print 'f(3.45)=',f(3.45)
 print 'f(5.0)=',f(5.0)  # This does not work as it is an extrapolation
 
-# Plot y=f(x):
-plot= PlotF(f, xmin=0.0, xmax=4.0, show=False)
-plot.plot([p[0] for p in key_points], [p[1] for p in key_points], 'o')
-plot.show()
+# Generate data for plotting (copy and paste to Excel or Google Spreadsheet)
+for t in np.mgrid[0.0:4.0:0.1]:
+  print t,f(t)
+
+# Plot y=f(x) with GUI (uncomment):
+#plot= PlotF(f, xmin=0.0, xmax=4.0, show=False)
+#plot.plot([p[0] for p in key_points], [p[1] for p in key_points], 'o')
+#plot.show()

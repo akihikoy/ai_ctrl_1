@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#Control Dynamixel to follow a sin curve
+#Example of P control
 
 #Importing libraries...
 import sys
@@ -19,10 +19,10 @@ dxl.MoveTo(p_start)
 time.sleep(2.0)  #wait 2 sec
 print 'Current position=',dxl.Position()
 
-#Move to a target position
-for t in np.mgrid[0:2*math.pi:0.1]:
-  p_trg= p_start - 600*(0.5-0.5*math.cos(t))
-  #print p_trg
-  dxl.MoveTo(p_trg, wait=False)
+tol= 40  #Tolerance
+p_trg= 1500  #Target position
+k_p= 0.3  #P-gain
+while abs(p_trg-dxl.Position()) > tol:
+  p_diff= k_p * (p_trg-dxl.Position())
+  dxl.MoveTo(dxl.Position()+p_diff, wait=False)
   time.sleep(0.01)
-  #print 'Current position=',dxl.Position()
