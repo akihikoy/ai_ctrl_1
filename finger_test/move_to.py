@@ -8,8 +8,9 @@ from dynamixel_lib import *
 import time
 
 #Setup the device
-dxl= TDynamixel1()
+dxl= TDynamixel1('XM430-W350')
 dxl.Setup()
+dxl.EnableTorque()
 
 #Move to initial position
 p_start= 2100

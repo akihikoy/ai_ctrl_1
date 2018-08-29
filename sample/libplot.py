@@ -13,12 +13,14 @@ from mpl_toolkits.mplot3d import Axes3D
 # show: do we show the plot?
 # Return plot object (see below return statements).
 def PlotF(f,xmin,xmax,dx=0.01,show=True):
-  if not isinstance(xmin,(list,np.ndarray)):  xmin= [xmin]
-  if not isinstance(xmax,(list,np.ndarray)):  xmax= [xmax]
+  scalar= False
+  if not isinstance(xmin,(list,np.ndarray)):  scalar= True; xmin= [xmin]
+  if not isinstance(xmax,(list,np.ndarray)):  scalar= True; xmax= [xmax]
   assert(len(xmin)==len(xmax))
   if len(xmin)==1:
     X= np.arange(xmin[0], xmax[0], dx)
-    Y= [f(x) for x in X]
+    if scalar:  Y= [f(x) for x in X]
+    else:       Y= [f([x]) for x in X]
     plot.plot(X,Y)
     if show: plot.show()
     return plot

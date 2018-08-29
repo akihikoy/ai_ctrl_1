@@ -10,8 +10,9 @@ import cma
 import time
 
 #Setup the device
-dxl= TDynamixel1()
+dxl= TDynamixel1('XM430-W350')
 dxl.Setup()
+dxl.EnableTorque()
 
 # Objective function to be minimized (parameter x[0] is initial position)
 def f(x):
