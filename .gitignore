@@ -10,3 +10,4 @@
 *.kate-swp
 core*
 build
+.ipynb_checkpoints/

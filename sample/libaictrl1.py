@@ -92,7 +92,7 @@ if __name__=='__main__':
 
   #Plot f and (data_x, data_y)
   plot= PlotF(f, xmin=0.0, xmax=1.0, show=False)
-  plot.title('GPR')
+  plot.title('MLP')
   plot.xlabel('x')
   plot.ylabel('y')
   plot.plot(data_x, data_y, 'o')
@@ -105,10 +105,10 @@ if __name__=='__main__':
     y_trg= 0.6
     return (y_trg-f(x))**2
 
-  x_des= FMin(f_error, 0.5, 0.0, 1.0)
-  print 'Solution:', x_des, f_error(x_des), f(x_des)
+  x_opt= FMin(f_error, 0.5, 0.0, 1.0)
+  print 'Solution:', x_opt, f_error(x_opt), f(x_opt)
 
-  plot.plot([x_des], [[f(x_des)]], '*')
+  plot.plot([x_opt], [f(x_opt)], '*')
   plot.show()
 
   raw_input('Waiting a key: ')
