@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 # Importing libraries...
+from __future__ import print_function
 from scipy.optimize import minimize
 
 # Objective function to be minimized
@@ -10,5 +11,5 @@ def f(x):
 # Minimize the function f
 res= minimize(f,[0.0,0.0])
 
-print res
-print 'Result=',res.x
+print(res)
+print('Result=',res.x)

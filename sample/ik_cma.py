@@ -1,6 +1,7 @@
 #!/usr/bin/python
 #Download CMA-ES for Python from https://www.lri.fr/~hansen/cmaesintro.html
 #and put cma.py in the same directory
+from __future__ import print_function
 import numpy as np
 import matplotlib.pyplot as plot
 from fk import FK
@@ -16,13 +17,13 @@ def Error(q, x_trg):
 def IK(x_trg, q0):
   res= cma.fmin(lambda q: Error(q, x_trg), q0, 0.5, {'verb_log':0})
   #res= cma.fmin(lambda q: Error(q, x_trg), q0, 0.5, {'verb_log':0,'termination_callback':lambda cma:Viz(cma.best.x)})
-  #print res
+  #print(res)
   return res[0]
 
 #Visualization
 def Viz(q):
   X= FK(q)
-  #print X
+  #print(X)
   plot.plot(X[0],X[1],marker='o')
 
 if __name__=='__main__':
@@ -33,12 +34,12 @@ if __name__=='__main__':
 
   q= IK(np.array([[1.5],
                   [0.0]]), q0)
-  print q
+  print(q)
   Viz(q)
 
   q= IK(np.array([[1.0],
                   [1.0]]), q0)
-  print q
+  print(q)
   Viz(q)
 
   plot.show()

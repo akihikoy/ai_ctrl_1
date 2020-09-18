@@ -1,4 +1,5 @@
 #!/usr/bin/python
+from __future__ import print_function
 import numpy as np
 import matplotlib.pyplot as plot
 from fk import FK
@@ -13,13 +14,13 @@ def Error(q, x_trg):
 def IK(x_trg, q0):
   res= minimize(lambda q: Error(q, x_trg), q0)
   #res= minimize(lambda q: Error(q, x_trg), q0, callback=Viz)
-  #print res
+  #print(res)
   return res.x
 
 #Visualization
 def Viz(q):
   X= FK(q)
-  #print X
+  #print(X)
   plot.plot(X[0],X[1],marker='o')
 
 if __name__=='__main__':
@@ -30,12 +31,12 @@ if __name__=='__main__':
 
   q= IK(np.array([[1.5],
                   [0.0]]), q0)
-  print q
+  print(q)
   Viz(q)
 
   q= IK(np.array([[1.0],
                   [1.0]]), q0)
-  print q
+  print(q)
   Viz(q)
 
   plot.show()

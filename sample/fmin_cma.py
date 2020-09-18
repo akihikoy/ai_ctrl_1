@@ -3,6 +3,7 @@
 #and put cma.py in the same directory
 
 # Importing libraries...
+from __future__ import print_function
 import cma
 
 # Objective function to be minimized
@@ -13,5 +14,5 @@ def f(x):
 res= cma.fmin(f,[0.0,0.0],0.5,{'verb_log':0,'popsize':4})
 # Parameters: cma.fmin(OBJ_FUNC, X_INIT, STD_DEV, OPTIONS)
 
-print res
-print 'Result=',res[0]
+print(res)
+print('Result=',res[0])

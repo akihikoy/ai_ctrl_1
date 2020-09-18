@@ -1,4 +1,5 @@
 #!/usr/bin/python
+from __future__ import print_function
 import numpy as np
 import matplotlib.pyplot as plot
 import math
@@ -35,10 +36,10 @@ def FK(q):
 if __name__=='__main__':
   plot.axis([-0.1,3.1,-0.1,3.1])
   X= FK([0.0,0.0,0.0])
-  print X
+  print(X)
   plot.plot(X[0],X[1],marker='o')
   X= FK([0.78,0.78,0.78])
-  print X
+  print(X)
   plot.plot(X[0],X[1],marker='o')
   plot.show()
 

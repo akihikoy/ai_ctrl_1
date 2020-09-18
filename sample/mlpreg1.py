@@ -3,6 +3,7 @@
 #cf. http://scikit-learn.org/stable/modules/neural_networks_supervised.html
 
 # Importing libraries...
+from __future__ import print_function
 import sys
 sys.path.append('../sample')
 from libplot import PlotF
@@ -28,13 +29,13 @@ mlpreg.fit(data_x, np.array(data_y).reshape(len(data_y)))
 f= lambda x: mlpreg.predict([[x]])[0]
 
 # Now we can compute y=f(x) for any x
-print 'f(1.5)=',f(1.5)
-print 'f(3.45)=',f(3.45)
-print 'f(5.0)=',f(5.0)
+print('f(1.5)=',f(1.5))
+print('f(3.45)=',f(3.45))
+print('f(5.0)=',f(5.0))
 
 # Generate data for plotting (copy and paste to Excel or Google Spreadsheet)
 #for t in np.mgrid[-1.0:5.0:0.2]:
-  #print t,f(t)
+  #print(t,f(t))
 
 # Plot y=f(x) with GUI (uncomment):
 plot= PlotF(f, xmin=-1.0, xmax=5.0, show=False)

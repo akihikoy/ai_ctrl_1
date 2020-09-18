@@ -4,6 +4,7 @@
 #  sudo pip install -U scikit-learn
 
 # Importing libraries...
+from __future__ import print_function
 import sys
 sys.path.append('../sample')
 from libplot import PlotF
@@ -49,9 +50,9 @@ gp.fit(data_x, data_y)
 f= lambda x: gp.predict([x])[0,0]
 
 # Now we can compute y=f(x) for any x
-print 'f([0.0,0.0])=',f([0.0,0.0])
-print 'f([1.0,1.0])=',f([1.0,1.0])
-print 'f([1.5,2.0])=',f([1.5,2.0])
+print('f([0.0,0.0])=',f([0.0,0.0]))
+print('f([1.0,1.0])=',f([1.0,1.0]))
+print('f([1.5,2.0])=',f([1.5,2.0]))
 
 #Plot gp.predict(x)
 plot,plot3d= PlotF(f, xmin=[-2,-2], xmax=[2,2], dx=0.1, show=False)

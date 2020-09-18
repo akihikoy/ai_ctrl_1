@@ -5,6 +5,7 @@
 #\version 0.1
 #\date    Sep.18, 2020
 
+from __future__ import print_function
 import sys,os
 from libplot import PlotF
 import cma
@@ -49,7 +50,7 @@ if __name__=='__main__':
   f= TrainMLPR(data_x, data_y)
 
   #Now we can compute y=f(x) for any x
-  print 'f(0.55)=',f(0.55)
+  print('f(0.55)=',f(0.55))
 
   #Plot f and (data_x, data_y)
   plot= PlotF(f, xmin=0.0, xmax=1.0, show=False)
@@ -67,7 +68,7 @@ if __name__=='__main__':
     return (y_trg-f(x))**2
 
   x_opt= FMin(f_error, 0.5, 0.0, 1.0)
-  print 'Solution:', x_opt, f_error(x_opt), f(x_opt)
+  print('Solution:', x_opt, f_error(x_opt), f(x_opt))
 
   plot.plot([x_opt], [f(x_opt)], '*')
   plot.show()

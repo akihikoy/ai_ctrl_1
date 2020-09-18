@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 # Importing libraries...
+from __future__ import print_function
 import sys
 sys.path.append('../sample')
 from libspline import *
@@ -19,7 +20,7 @@ f= spline.Evaluate
 
 # Generate data for plotting (copy and paste to Excel or Google Spreadsheet)
 for t in np.mgrid[key_points[0][0]:key_points[-1][0]:0.1]:
-  print t,f(t)
+  print(t,f(t))
 
 # Plot y=f(x) with GUI (uncomment):
 #plot= PlotF(f, xmin=key_points[0][0], xmax=key_points[-1][0], show=False)

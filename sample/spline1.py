@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 # Importing libraries...
+from __future__ import print_function
 import sys
 sys.path.append('../sample')
 from libspline import *
@@ -19,13 +20,13 @@ spline.Initialize(key_points, tan_method=spline.CARDINAL, c=0.0)
 f= spline.Evaluate
 
 # Now we can compute y=f(x) for any x
-print 'f(1.5)=',f(1.5)
-print 'f(3.45)=',f(3.45)
-print 'f(5.0)=',f(5.0)  # This does not work as it is an extrapolation
+print('f(1.5)=',f(1.5))
+print('f(3.45)=',f(3.45))
+print('f(5.0)=',f(5.0))  # This does not work as it is an extrapolation
 
 # Generate data for plotting (copy and paste to Excel or Google Spreadsheet)
 for t in np.mgrid[0.0:4.0:0.1]:
-  print t,f(t)
+  print(t,f(t))
 
 # Plot y=f(x) with GUI (uncomment):
 #plot= PlotF(f, xmin=0.0, xmax=4.0, show=False)

@@ -2,6 +2,7 @@
 #Cubic Hermite Spline
 #Akihiko Yamaguchi, info@akihikoy.net
 #2014
+from __future__ import print_function
 
 # Matlab-like mod function that returns always positive
 import math
@@ -37,7 +38,7 @@ class TCubicHermiteSpline:
     idx= self.FindIdx(t,self.idx_prev)
     if abs(t-self.KeyPts[-1].T)<1.0e-6:  idx= len(self.KeyPts)-2
     if idx<0 or idx>=len(self.KeyPts)-1:
-      print 'WARNING: Given t= %f is out of the key points (index: %i)' % (t,idx)
+      print('WARNING: Given t= %f is out of the key points (index: %i)' % (t,idx))
       if idx<0:
         idx= 0
         t= self.KeyPts[0].T

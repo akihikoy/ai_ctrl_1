@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 # Importing libraries...
+from __future__ import print_function
 import math
 import numpy as np
 from scipy.optimize import minimize
@@ -29,8 +30,8 @@ plot3d.plot_wireframe(XY[0],XY[1],Z)
 #plot3d.plot_surface(XY[0],XY[1],Z)
 
 res= minimize(f,[0.01,0.01],callback=callback)
-print res
-print 'Result=',res.x
+print(res)
+print('Result=',res.x)
 #plot.plot(res.x[0],res.x[1],'o')
 plot3d.scatter(res.x[0],res.x[1],f(res.x),marker='o')
 plot.show()
